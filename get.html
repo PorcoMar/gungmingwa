@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-1.11.3.js"></script>
+	</head>
+	<body>
+		用户名：<input class="name" type="text" placeholder="请输入账户" />
+		用户名：<input class="pass" type="text" placeholder="密码" />
+		<input class="btn" type="button" value="提交" />
+		<ul>
+			
+		</ul>
+		<script>
+		
+//			$.get("demo.php",{"user":"潘敏","pwd":"123"},function(data){
+//				alert(data)
+//			})
+//			$.post("demo.php",{"user":"潘敏","pwd":"123"},function(data){
+//				alert(data)
+//			})
+			
+			$.get("http://api.laoxiangbang.com.cn/index.php?index.php?m=Home&c=Api&a=trade&format=html",function(sajhdgfvg){
+				
+				var mag=sajhdgfvg.data
+				var str=''
+				for(var i in mag){
+					//console.log(mag[i].name)
+					str+='<p>'+mag[i].name+'</p>'
+				}
+				$("body").append(str)
+				$.getScript("demo.js",function(){
+				
+				})
+			})
+			
+			
+			$.getJSON("jsondatd.json",function(shuju){
+				var str=''
+				for(var i=0;i<shuju.length;i++){
+					console.log(shuju[i].name)
+					str+='<p class="p1">'+shuju[i].name+'</p>'
+					str+='<p>'+shuju[i].age+'</p>'
+				}
+				$("body").append(str)
+			})
+			
+			
+			
+			
+			
+			
+			
+//			$(".btn").click(function(){
+//				var name=$(".name").val()
+//				var pass=$(".pass").val()
+//				$.get("demo.php",{"user":name,"pwd":pass},function(data){
+//					alert(data)
+//				})
+//			})
+//			$(".btn").click(function(){
+//				var name=$(".name").val()
+//				var pass=$(".pass").val()
+//				$.post("demo.php",{"user":name,"pwd":pass},function(data){
+//					alert(data)
+//				})
+//			})
+//			
+//			$.get("http://api.laoxiangbang.com.cn/index.php?index.php?m=Home&c=Api&a=trade&format=html",function(data){	
+//				var mag=data.data
+//				var str=''
+//				for(var i in mag){
+//					//console.log(mag[i].name)
+//					str+='<li>'+mag[i].name+'</li>'
+//				}
+//				$("ul").append(str)
+//			})
+//			
+////			$.getScript("demo.js",function(){
+////				
+////			})
+//			
+//			$.getJSON("jsondatd.json",function(data){
+//				
+//				var mag=data.data
+//				
+//				for(var i in mag){
+//					console.log(mag[i].name)
+//					
+//				}
+//			})
+		</script>
+	</body>
+</html>
